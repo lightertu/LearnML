@@ -27,11 +27,12 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
-mu = mean(X);
-sigma = std(X);
-% X_norm = (X - mu) ./ sigma
+
+sizeA_vec = size(X)';
+mu = repmat(mean(X), sizeA_vec(1), 1);
+sigma = repmat(std(X), sizeA_vec(1), 1);
+
+X_norm = (X - mu) ./ sigma
 % ============================================================
-
-
 
 end
